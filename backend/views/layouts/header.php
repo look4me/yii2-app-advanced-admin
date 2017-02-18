@@ -14,11 +14,13 @@ use yii\bootstrap\Nav;
     <?php
     NavBar::begin(
         [
-            'brandLabel' =>
-                '<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">' .
-                '<span class="sr-only">Toggle navigation</span>' .
-                '</a>',
-            'brandUrl' => Yii::$app->homeUrl,
+//            'brandLabel' =>
+//                '<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">' .
+//                '<span class="sr-only">Toggle navigation</span>' .
+//                '</a>',
+            'brandLabel' => '<span class="sr-only">Toggle navigation</span>',
+            'brandOptions' => ['class'=>"sidebar-toggle", 'data-toggle'=>"offcanvas", 'role'=>"button"],
+            'brandUrl' => '#',
             'options' => [
                 'class' => 'navbar-inverse',
             ],
@@ -47,7 +49,7 @@ use yii\bootstrap\Nav;
             . '</li>';
     }
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => $menuItems,
     ]);
     NavBar::end();
